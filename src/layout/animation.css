@@ -1,0 +1,31 @@
+.fadeInOutAnimation {
+    animation: fadeInOutAnimation 0.8s ease-in;
+}
+
+@keyframes fadeInOutAnimation {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: hidden;
+  }
+}
+
+.fadeOutInAnimation {
+  animation: fadeOutInAnimation 2s ease-in-out;
+}
+
+.fadeOutInAnimation2 {
+  animation: fadeOutInAnimation 2.5s ease-in-out;
+}
+
+@keyframes fadeOutInAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
