@@ -1,6 +1,32 @@
 <script lang="ts">
+	import { stringify } from "postcss";
+
 
     import Header from "../../components/Header.svelte";
+    import Link from "../../components/Links/Link.svelte";
+    import Resume from "../../components/Links/Resume.svelte";
+
+    interface PlatformLink {
+        [platform: string]: string;
+    }
+
+    const links: PlatformLink = {
+        Github: "https://github.com/Thorf1nn?tab=repositories",
+        Malt: "https://www.linkedin.com/in/luca-orelli-410b8a231/",
+        ComeUp: "https://example.comup.com",
+        Fiverr: "https://www.fiverr.com/your_username",
+        Linkedin: "https://www.linkedin.com/in/your_username",
+    };
+
+    interface LangageResume {
+        [langage: string]: string;
+    }
+
+    const resumes : LangageResume = {
+        English : "/resumes/english_resume.pdf",
+        French : "/resumes/french_resume.pdf"
+    }
+
 </script>
 
 <section>
@@ -9,29 +35,14 @@
             <Header state="infos"/>
             <div class="absolute text-xs bottom-20 fadeInOutAnimation lg:text-xl lg:right-40">
                 <ul class="flex flex-col space-y-2">
-                    <li class="hover:text-gray-400 transition-colors cursor-pointer">
-                        <a href="https://github.com/Thorf1nn?tab=repositories" target="_blank">Github &UpperRightArrow;</a>
-                    </li>
-                    <li class="hover:text-gray-400 transition-colors cursor-pointer">
-                        <a href="https://www.linkedin.com/in/luca-orelli-410b8a231/" target="_blank">Linkedin &UpperRightArrow;</a>
-                    </li>
-                    <li class="hover:text-gray-400 transition-colors cursor-pointer">
-                        <a href="https://www.malt.fr/profile/lucaorelli" target="_blank">Malte &UpperRightArrow;</a>
-                    </li>
-                    <li class="hover:text-gray-400 transition-colors cursor-pointer">
-                        <a href="https://comeup.com/en/@lucode" target="_blank">ComeUp &UpperRightArrow;</a>
-                    </li>
-                    <li class="hover:text-gray-400 transition-colors cursor-pointer">
-                        <a href="https://fr.fiverr.com/thorf1nn?up_rollout=true" target="_blank">Fiverr &UpperRightArrow;</a>
-                    </li>
+                    {#each Object.keys(links) as platform}
+                        <Link link={links[platform]} platform={platform}/>
+                    {/each}
                 </ul>
                 <ul class="mt-8">
-                    <li class="hover:text-gray-400 transition-colors cursor-pointer">
-                        <a class="font-bold" href="/resumes/english_resume.pdf" target="_blank">English resume</a>
-                    </li>
-                    <li class="hover:text-gray-400 transition-colors cursor-pointer">
-                        <a class="font-bold" href="/resumes/french_resume.pdf" target="_blank">French resume</a>
-                    </li>
+                  {#each Object.keys(resumes) as langageResume}
+                    <Resume resumelink={resumes[langageResume]} langage={langageResume}/>
+                  {/each}
                 </ul>
             </div>
         </div>

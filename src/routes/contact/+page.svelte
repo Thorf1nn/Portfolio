@@ -1,36 +1,17 @@
 <script>
     import Header from "../../components/Header.svelte";
-    import emailjs from '@emailjs/browser';
-
-    let mailState = ""
-
-    function sendEmail(e) {
-        emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY)
-        .then((result) => {
-            mailState = 'The mail has been send carefully!'
-        }, (error) => {
-            mailState = 'The mail cannot be send...'
-        });
-    }
+    import ContactButton from "../../components/ContactButton.svelte";
 </script>
 
 <div class="flex justify-center items-center h-screen">
     <div class="border-2 border-black w-[90%] h-[90%] p-4 m-4">
         <Header state="contact"/>
         <div class="lg:flex lg:justify-center items-center">
-            <form class="flex flex-col mt-10 w-full max-w-sm fadeInOutAnimation" on:submit|preventDefault={sendEmail}>
-                <h2 class="NeueMontreal-Regular mb-4">&dArr; Contact me</h2>
-                <div class="space-y-4">
-                    <input class="outline-0	border border-black bg-transparent w-full p-2 placeholder:text-black" name="name" type="name" placeholder="Enter your name" required>
-                    <input class="outline-0	border border-black bg-transparent w-full p-2 placeholder:text-black" name="email" type="email" placeholder="Enter your email" required>
-                    <textarea class="outline-0	border border-black bg-transparent w-full p-2 resize-none h-[200px] placeholder:text-black" name="message" placeholder="Enter message" required></textarea>
-                    <button class="text-black py-2 rounded hover:text-gray-400 transition-colors cursor-pointer">
-                        <input type="submit" value="Submit" class="cursor-pointer">
-                        &UpperRightArrow;
-                    </button>
-                </div>
-            </form>
-            <!-- <p class="NeueMontreal-Bold">{mailState}</p> -->
-        </div>
+            <div class="flex flex-col ">
+                <p>Want to discuss a new project?</p>
+                <p>I'm available for freelance work</p>
+            </div>
+            <ContactButton></ContactButton>
+       </div>
     </div>
 </div>

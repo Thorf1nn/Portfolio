@@ -8,7 +8,7 @@
         <div class="relative border-2 border-black w-[90%] h-[90%] p-4 m-4">
             <Header state="home"/>
             <div class="absolute bottom-10 right-10 fadeInOutAnimation">
-                <p class="flex flex-col space-between justify-center lg:text-xl">
+                <p class="flex flex-col space-between justify-center lg:text-2xl">
                     <span>Full-Stack developer</span>
                     <span>specialized</span>
                     <span>in Svelte, React,</span>
