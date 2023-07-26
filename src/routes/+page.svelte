@@ -21,7 +21,6 @@
                     <span>applications</span>
                 </p>
             </div>
-            <Cube/>
         </div>
     </div>
 </main>

@@ -3,10 +3,13 @@
     import "../layout/animation.css";
     import "../layout/fonts.css"
 
+    import Cloud from "../components/three/Cloud.svelte";
     import EntranceAnimation from "../components/animation/EntranceAnimation.svelte";
 </script>
 
 <EntranceAnimation />
+
+<Cloud/>
 
 <style>
     .is-visible {

@@ -11,9 +11,6 @@
 <div class="cube absolute">
     <Canvas>
         <Fog color={'#2958B2'} />
-        <T.PerspectiveCamera makeDefault position={[10, 10, 10]} fov={24}>
-			<OrbitControls maxPolarAngle={degToRad(80)} enableZoom={false} target={{ y: 0.5 }} />
-		</T.PerspectiveCamera>
 
 		<T.DirectionalLight castShadow position={[2, 20, 10]} />
 		<T.DirectionalLight position={[-3, 10, -10]} intensity={0.2} />

@@ -7,11 +7,11 @@
     <div class="border-2 border-black w-[90%] h-[90%] p-4 m-4">
         <Header state="contact"/>
         <div class="lg:flex lg:justify-center items-center">
-            <div class="flex flex-col ">
-                <p>Want to discuss a new project?</p>
-                <p>I'm available for freelance work</p>
+            <div class="flex flex-col space-y-4 fadeInOutAnimation mt-10">
+                <p class="text-4xl NeueMontreal-Regular">Want to discuss for a new project?</p>
+                <p class="text-2xl NeueMontreal-Light">I'm available for freelance work</p>
+                <ContactButton></ContactButton>
             </div>
-            <ContactButton></ContactButton>
        </div>
     </div>
 </div>
