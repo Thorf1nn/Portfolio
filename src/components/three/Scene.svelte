@@ -83,6 +83,17 @@
         );
       };
 
+      const onWindowResize = () => {
+        w = window.innerWidth;
+        h = window.innerHeight;
+        cam.aspect = w / h;
+        cam.updateProjectionMatrix();
+        renderer.setSize(w, h);
+      };
+
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+
       const init = () => {
         w = window.innerWidth;
         h = window.innerHeight;
@@ -93,10 +104,13 @@
 
         // Wrap the renderer.domElement in a container div
         const container = document.createElement('div');
-        container.style.position = 'absolute';
+        container.style.position = 'fixed'; // Set position to fixed
         container.style.top = '0';
         container.style.left = '0';
-        container.style.zIndex = '-100';
+        container.style.backgroundSize = 'cover'; // Set background-size to cover
+        container.style.backgroundRepeat = 'no-repeat'; // Set background-repeat to no-repeat
+        container.style.backgroundPosition = 'center'; // Set background-position to center
+        container.style.zIndex = '-2';
         container.appendChild(renderer.domElement);
         document.body.appendChild(container);
 
