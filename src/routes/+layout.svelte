@@ -12,7 +12,6 @@
 <EntranceAnimation />
 <Scene/>
 
-
 <style>
     .is-visible {
         animation-duration: 1s;
@@ -27,5 +26,8 @@
     }
 </style>
 
+<svelte:head>
+	<title>Luca Orelli - Portfolio</title>
+</svelte:head>
 
 <slot />
