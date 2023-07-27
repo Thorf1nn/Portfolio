@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Header from "../components/Header.svelte";
-    import Cube from "../components/three/Cube.svelte";
 </script>
 
 <main>

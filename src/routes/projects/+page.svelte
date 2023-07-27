@@ -2,7 +2,7 @@
 
     import Header from "../../components/Header.svelte";
     import Projects from "../../components/Projects.svelte";
-    
+
     interface Project {
         link : string,
         title: string,
@@ -24,7 +24,7 @@
 </script>
 
 <section>
-    <div class="flex justify-center items-center h-screen z-0">
+    <div class="flex justify-center items-center h-screen">
         <div class="border-2 border-black w-[90%] h-[90%] p-4 m-4">
             <Header state="projects"/>
             <div class="absolute mt-10 md:mt-0 md:right-20 lg:right-40 fadeInOutAnimation lg:text-3xl">
