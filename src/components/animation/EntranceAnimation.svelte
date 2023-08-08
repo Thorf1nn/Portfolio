@@ -6,7 +6,7 @@
         width: 100%;
         height: 100%;
         z-index: 9999;
-        animation: animate-fade 1.2s 1.2s forwards;
+        animation: animate-fade 2.2s forwards;
         background: #000;
     }
 
